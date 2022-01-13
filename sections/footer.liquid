@@ -1,0 +1,75 @@
+{{ 'section-footer.css' | assets_url | stylesheet_tag }}
+
+<footer>
+    {% render 'icon-af' %}
+    <div class="news-letter">
+        <p class="title">NEWS LETTER</p>
+        <div class="input-wrapper">
+            <input type="text" placeholder="Enter your email" />
+            {% render 'icon-arrow-black' %}
+        </div>
+        <div class="social-media-icons">
+            {%- if section.settings.facebook_url != blank -%}
+                <a href="{{ section.settings.facebook_url }}" >
+                    {% render 'icon-facebook' %}
+                </a>
+            {%- endif -%}
+            {%- if section.settings.instagram_url != blank -%}
+                <a href="{{ section.settings.instagram_url }}" >
+                    {% render 'icon-instagram' %}
+                </a>
+            {%- endif -%}
+            {%- if section.settings.email != blank -%}
+                <a href="{{ section.settings.email }}" >
+                    {% render 'icon-mail' %}
+                </a>
+            {%- endif -%}  
+        </div>  
+    </div>
+
+    <div>
+        <p class="title">AGAIN FASTER</p>
+        <div class="nav-links">
+            {% for link in linklists.main-menu.links %}
+                {% assign child_list_handle = link.title | handleize %}
+                {% if linklists[child_list_handle].links != blank %}
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                    [{% for childlink in linklists[child_list_handle].links %}
+                        <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+                    {% endfor %}]
+                {% else %}
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <p class="copyright">©2020 Again Faster. All Rights Reserved</p>
+</footer>
+
+
+{% schema %}
+    {
+        "name": "Footer",
+        "settings": [
+            {
+                    "type": "url",
+                    "id": "facebook_url",
+                    "label": "Facebook URL"
+            },
+            {
+                    "type": "url",
+                    "id": "instagram_url",
+                    "label": "Instagram URL"
+            },
+            {
+                    "type": "url",
+                    "id": "email",
+                    "label": "Mail"
+            }
+        ],
+        "presets": [{
+            "name": "Footer",
+            "category": "Text"
+        }]
+    }
+{% endschema %}

@@ -1,0 +1,22 @@
+<div class="homepage-products">
+    {% for product in collections.frontpage.products limit: 4 %}
+    <div class="product"> 
+    {% comment %} {% unless product.available %}<br><strong>sold out</strong>{% endunless %} {% endcomment %}
+    <a href="{{ product.url | within: collection }}">
+        <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}" load="lazy">
+    </a>
+    <a class="title" href="{{ product.url | within: collection }}">{{ product.title}}</a>
+    </div>
+    {% endfor %}
+</div>
+
+{% schema %}
+    {
+        "name": "Products",
+        "settings": [],
+        "presets": [{
+            "name": "Products",
+            "category": "Text"
+        }]
+    }
+{% endschema %}

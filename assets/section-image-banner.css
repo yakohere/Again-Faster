@@ -1,0 +1,50 @@
+
+.image-banner {
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 100;
+}
+
+.image-banner .hero-img {
+    width: 100% !important;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}
+
+.image-banner .content {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+}
+
+.image-banner .content h2 {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 60px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #FFFFFF; 
+    width: min-content;
+    white-space: break-space; 
+}
+
+.image-banner .content p {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: #FFFFFF;
+    max-width: 550px;
+    margin: 24px 0 40px 0;
+}
+
+.image-banner .content a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

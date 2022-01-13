@@ -1,0 +1,24 @@
+{{ 'section-announcement-bar.css' | asset_url | stylesheet_tag }}
+
+<div class="announcement-bar">
+    <a href="{{ section.settings.url }}">{{ section.settings.text }}</a>
+</div>
+
+{% schema %}
+    {
+        "name": "Announcement Bar",
+        "settings": [
+            {
+                "type": "text",
+                "id": "text",
+                "label": "Text",
+                "default": "20% OFF Sitewide until 9/12"
+            },
+            {
+                "type": "url",
+                "id": "url",
+                "label": "URL"
+            }
+        ]
+    }
+{% endschema %}

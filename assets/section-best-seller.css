@@ -1,0 +1,60 @@
+
+.best-seller {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 65px;
+    padding: 120px 40px
+}
+
+.best-seller > img {
+    width: 60%;
+}
+
+.best-seller .more-info span{
+    font-family: Oswald;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #000000;
+    display: inline-block;
+    margin: 40px 0 8px 0;
+}
+
+.best-seller .more-info h2 {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 130%;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.best-seller .more-info p {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: #8F8F8F;
+    margin: 16px 0 40px 0;
+}
+
+.best-seller .more-info a {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #000000;
+
+    border-bottom: 1px solid #000000;
+}
+
+.best-seller .more-info img {
+    width: 100%;
+}

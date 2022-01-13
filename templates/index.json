@@ -1,0 +1,18 @@
+{
+    "sections": {
+        "image-banner": {
+            "type": "image-banner"
+        },
+        "products": {
+            "type": "products"
+        },
+        "best-seller": {
+            "type": "best-seller"
+        }
+    },
+    "order": [
+        "image-banner",
+        "products",
+        "best-seller"
+    ]
+}

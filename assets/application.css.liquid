@@ -12,9 +12,9 @@ body {
 
 header {
     width: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
     align-items: center;
-    justify-content: space-between;
     padding: 0 40px;
 
     position: absolute;
@@ -23,35 +23,62 @@ header {
     z-index: 500;
 }
 
-header a {
-    text-decoration: none;
-    font-family: Open Sans;
-    font-size: 12px;
-    line-height: 140%;
-    letter-spacing: 0.175em;
-    text-transform: uppercase;
-    color: #FFFFFF;
+header .logo {
+    grid-column: span 3;
+}
+
+header .logo svg {
+    display: inline-block;
+    vertical-align: middle;
 }
 
 header nav {
+    grid-column: span 6;
+}
+
+header nav ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 40px;
 }
 
-header .icons svg{
-    margin-right: 10px;
+header nav ul li {
+    list-style: none;
 }
 
-header .icons svg:last-child {
-    margin: 0;
+header nav ul li a {
+    text-decoration: none;
+    font-family: Open Sans;
+    font-size: 12px;
+    letter-spacing: 0.175em;
+    text-transform: uppercase;
+    color: #FFFFFF;
 }
+
+header .icons {
+    grid-column: span 3;
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    vertical-align: top;
+}
+
+header .icons li {
+    list-style: none;
+}
+
+header .icons li svg {
+    display: inline-block;
+    vertical-align: middle;
+}
+
 
 .button {
     text-transform: uppercase;
     padding: 21px 24px;
-    ont-family: Open Sans;
+    font-family: Open Sans;
     font-size: 12px;
     line-height: 16px;
     letter-spacing: 0.175em;
@@ -64,38 +91,6 @@ header .icons svg:last-child {
     border: 1px solid #FFFFFF;
     background: transparent;
     color: white;
-}
-
-.homepage-products {
-    display: flex;
-    padding: 0 40px;
-    gap: 14px;
-    margin: 97px 0;
-}
-
-.homepage-products .product {
-    width: 328px;
-}
-
-.homepage-products .product img{
-    width: 100%;
-}
-
-.homepage-products .product .title {
-    width: 100%;
-    display: block;
-    font-family: Oswald;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 168%;
- 
-    text-align: center;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #000000;
-    margin-top: 8px;
 }
 
 footer {

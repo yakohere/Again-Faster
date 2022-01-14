@@ -1,23 +1,15 @@
 {{ 'section-best-seller.css' | asset_url | stylesheet_tag }}
 
 <div class="best-seller">
-    <img src="{{ section.settings.image_one | img_url: ''}}" alt="boy-lifting" load="lazy" />
+    <img src="{{ section.settings.image_one | img_url: ''}}" alt="boy-lifting" loading="lazy" />
 
     <div class="more-info">
-        <img src="{{ section.settings.image_two | img_url: ''}}" alt="boy-jumping" load="lazy" />
-        {%- for block in section.blocks -%}
-            {%- case block.type -%}
-                {%- when 'title' -%}
-                    <span>{{ block.settings.title | escape  }}</span>
-                {%- when 'sub_title' -%}
-                    <h2>{{ block.settings.sub_title | escape  }}</h2>
-                {%- when 'paragraph' -%}
-                    <p>{{ block.settings.paragraph | escape  }}</p>
-                {%- when 'button' -%}
-                    <a {% if block.settings.button_link == blank %} role="link" aria-disabled="true" {% else %} href="{{ block.settings.button_link }}" {% endif %}  >{{ block.settings.button | escape  }}</a>
-            {%- endcase -%}
-        {%- endfor -%}
-    </div>
+        <img src="{{ section.settings.image_two | img_url: ''}}" alt="boy-jumping" loading="lazy" />
+        <span>{{ section.settings.title | escape }}</span>
+        <h2>{{ section.settings.sub_title | escape }}</h2>
+        <p>{{ section.settings.paragraph | escape }}</p>
+        <a {% if section.settings.button_link==blank %} role="link" aria-disabled="true" {% else %}
+            href="{{ section.settings.button_link }}" {% endif %}>{{ section.settings.button | escape }}</a>
 </div>
 
 {% schema %}
@@ -33,78 +25,39 @@
                 "type": "image_picker",
                 "id": "image_two",
                 "label": "Second Image"
-            }
-        ],
-        "blocks": [
-            {
-                "type": "title",
-                "name": "Title",
-                "limit": 1,
-                "settings": [
-                    {
-                        "type": "text",
-                        "id": "title",
-                        "default": "Best Seller",
-                        "label": "Title"
-                    }
-                ]
             },
             {
-                "type": "sub_title",
-                "name": "Sub Title",
-                "limit": 1,
-                "settings": [
-                    {
-                        "type": "text",
-                        "id": "sub_title",
-                        "default": "TRULY, AN ALL IN ONE BARBELL",
-                        "label": "Sub Title"
-                    }
-                ]
+                "type": "text",
+                "id": "title",
+                "default": "Best Seller",
+                "label": "Title"
             },
             {
-                "type": "paragraph",
-                "name": "Paragraph",
-                "limit": 1,
-                "settings": [
-                    {
-                        "type": "text",
-                        "id": "paragraph",
-                        "default": "Design that matches the performance and quality of other elite level competition bars",
-                        "label": "Paragraph"
-                    }
-                ]
+                "type": "text",
+                "id": "sub_title",
+                "default": "TRULY, AN ALL IN ONE BARBELL",
+                "label": "Sub Title"
             },
             {
-                "type": "button",
-                "name": "Button",
-                "limit": 1,
-                "settings": [
-                    {
-                        "type": "text",
-                        "id": "button",
-                        "default": "SHOP WEIGHTS",
-                        "label": "Button Text"
-                    },
-                    {
-                        "type": "url",
-                        "id": "button_link",
-                        "label": "Button Link"
-                    }
-                ]
+                "type": "text",
+                "id": "paragraph",
+                "default": "Design that matches the performance and quality of other elite level competition bars",
+                "label": "Paragraph"
+            },
+            {   
+                "type": "text",
+                "id": "button",
+                "default": "SHOP WEIGHTS",
+                "label": "Button Text"
+            },
+            {
+                "type": "url",
+                "id": "button_link",
+                "label": "Button Link"
             }
         ],
         "presets": [{
-            "name": "Best Seller",
-            "category": "Text",
-            "blocks": [
-                {
-                    "type": "title",
-                    "type": "sub_title",
-                    "type": "paragraph",
-                    "type": "button"
-                }
-            ]
+            "name": "Best Seller"
         }]
     }
 {% endschema %}

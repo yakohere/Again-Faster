@@ -4,14 +4,14 @@
     align-items: center;
     justify-content: space-between;
     gap: 65px;
-    padding: 120px 40px
+    padding: 120px 40px 120px 0;
 }
 
 .best-seller > img {
     width: 60%;
 }
 
-.best-seller .more-info span{
+.best-seller .more-info span {
     font-family: Oswald;
     font-style: normal;
     font-weight: 300;

@@ -1,21 +1,33 @@
 <header>
-    {% render "icon-logo" %}
+    <a href="#link-to-home-page" class="logo">
+        {% render "icon-logo" %} 
+    </a>
     <nav>
-        {% for link in linklists.main-menu.links %}
-            {% assign child_list_handle = link.title | handleize %}
-            {% if linklists[child_list_handle].links != blank %}
-                <a href="{{ link.url }}">{{ link.title }}</a>
-                [{% for childlink in linklists[child_list_handle].links %}
-                    <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
-                {% endfor %}]
-            {% else %}
-                <a href="{{ link.url }}">{{ link.title }}</a>
-            {% endif %}
-        {% endfor %}
+        <ul>
+            {% for link in linklists.main-menu.links %}
+            <li>
+                {% assign child_list_handle = link.title | handleize %}
+                {% if linklists[child_list_handle].links != blank %}
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                    [{% for childlink in linklists[child_list_handle].links %}
+                        <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+                    {% endfor %}]
+                {% else %}
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
     </nav>
-    <div class="icons">
-        {% render 'icon-search' %}
-        {% render 'icon-bag' %}
-        {% render 'icon-account' %}
-    </div>
+    <ul class="icons">
+        <li>
+            {% render 'icon-search' %}
+        </li>
+        <li>
+            {% render 'icon-bag' %}
+        </li>
+        <li>
+            {% render 'icon-account' %}
+        </li>
+    </ul>
 </header>

@@ -3,22 +3,16 @@
 <div class="image-banner">
     <img 
         class="hero-img" 
-        src="{{ section.settings.image | img_url: ''}}" 
+        src="{{ section.settings.image | img_url: '1920x1080'}}" 
         alt="image-banner"
+        loading: "lazy";
     />
     <div class="content">
-        {%- for block in section.blocks -%}
-            {%- case block.type -%}
-                {%- when 'heading' -%}
-                        <h2>{{ block.settings.heading | escape }}</h2>
-                {%- when 'paragraph' -%}
-                        <p>{{ block.settings.paragraph | escape }}</p>
-                {%- when 'button' -%}
-                        <a {% if block.settings.button_link == blank %} role="link" aria-disabled="true" {% else %} href="{{ block.settings.button_link }}" {% endif %} class="button outline">
-                            {{ block.settings.button | escape }} {% render 'icon-arrow-white' %}
-                        </a>       
-            {%- endcase -%}
-        {%- endfor -%}
+        <h2>{{ section.settings.heading }}</h2>
+        <p>{{ section.settings.paragraph }}</p>
+        <a {% if section.settings.button_link == blank %} role="link" aria-disabled="true" {% else %} href="{{ section.settings.button_link }}" {% endif %} class="button outline">
+            {{ section.settings.button }} {% render 'icon-arrow-white' %}
+        </a>       
     </div>
 </div>
 
@@ -30,64 +24,33 @@
             "type": "image_picker",
             "id": "image",
             "label": "Background Picture"
-        }
-    ],
-    "blocks": [
-        {
-            "type": "heading",
-            "name": "Heading",
-            "limit": 1,
-            "settings": [
-                {
-                    "type": "text",
-                    "id": "heading",
-                    "default": "Team barbell",
-                    "label": "Heading"
-                }
-            ]
         },
         {
-            "type": "paragraph",
-            "name": "Paragraph",
-            "limit": 1,
-            "settings": [
-                {
-                    "type": "text",
-                    "id": "paragraph",
-                    "default": "Team Barbell was to design a piece of equipment that matches the performance and quality of other elite level competition bars.",
-                    "label": "Paragraph"
-                }
-            ]
+            "type": "text",
+            "id": "heading",
+            "default": "Team barbell",
+            "label": "Heading"
         },
         {
-            "type": "button",
-            "name": "Button",
-            "limit": 1,
-            "settings": [
-                {
-                    "type": "text",
-                    "id": "button",
-                    "default": "Explore",
-                    "label": "Button"
-                },
-                {
-                    "type": "url",
-                    "id": "button_link",
-                    "label": "Button link"
-                }
-            ]
+            "type": "text",
+            "id": "paragraph",
+            "default": "Team Barbell was to design a piece of equipment that matches the performance and quality of other elite level competition bars.",
+            "label": "Paragraph"
+        },
+        {
+            "type": "text",
+            "id": "button",
+            "default": "Explore",
+            "label": "Button"
+        },
+        {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
         }
     ],
     "presets": [{
-        "name": "Image Banner",
-        "category": "Text",
-        "blocks": [
-            {
-                "type": "heading",
-                "type": "paragraph",
-                "type": "button"
-            }
-        ]
+        "name": "Image Banner"
     }]
 }
 {% endschema %}

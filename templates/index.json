@@ -3,8 +3,8 @@
         "image-banner": {
             "type": "image-banner"
         },
-        "products": {
-            "type": "products"
+        "featured-collections": {
+            "type": "featured-collections"
         },
         "best-seller": {
             "type": "best-seller"
@@ -12,7 +12,7 @@
     },
     "order": [
         "image-banner",
-        "products",
+        "featured-collections",
         "best-seller"
     ]
 }

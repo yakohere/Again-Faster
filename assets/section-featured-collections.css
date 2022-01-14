@@ -1,0 +1,44 @@
+
+.featured-collections {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 40px;
+    gap: 14px;
+    margin: 97px 0;
+}
+
+.featured-collections .collection {
+    text-decoration: none;
+}
+
+.featured-collections .collection img {
+    width: 100%;
+}
+
+.featured-collections .collection .title {
+    width: 100%;
+    display: block;
+    font-family: Oswald;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 168%;
+ 
+    text-align: center;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000000;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.featured-collections .collection .title span {
+    margin-left: 9px;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.featured-collections .collection:hover > .title span {
+    opacity: 1;
+}

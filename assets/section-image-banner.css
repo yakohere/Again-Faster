@@ -8,7 +8,9 @@
 }
 
 .image-banner .hero-img {
-    width: 100% !important;
+    width: 100%;
+    height: calc(100vh - 40px);
+    object-fit: cover;
     -moz-user-select: none;
     -webkit-user-select: none;
     user-select: none;

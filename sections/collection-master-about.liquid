@@ -1,0 +1,35 @@
+{{ 'section-collection-master-about.css' | asset_url | stylesheet_tag }}
+
+<div class="collection-master-about">
+    <div class="info">
+            <span class="eyebrow"> 
+                <span class="slash">/</span> 
+                {{ collection.metafields.accentuate.eyebrow }}
+            </span>
+            <h2>{{ collection.metafields.accentuate.title }}</h2>
+            <a href="{{ collection.metafields.accentuate.cta_label }}">
+                {{ collection.metafields.accentuate.cta_label }}
+                {% render 'icon-arrow-black' %}
+            </a>
+    </div>
+
+    <div class="images">
+        {% for image in collection.metafields.accentuate.image_1 %}
+            <img src="{{ image.src }}" alt="{{ image.alt }}" loading="lazy"/>
+        {% endfor %} 
+
+        {% for image in collection.metafields.accentuate.image_2 %}
+            <img src="{{ image.src }}" alt="{{ image.alt }}" loading="lazy"/>
+        {% endfor %} 
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "collection-master-about",
+        "settings": [],
+        "presets": [{
+            "name": "collection-master-about"
+        }]
+    }
+{% endschema %}

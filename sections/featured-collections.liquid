@@ -2,7 +2,7 @@
 
 <div class="featured-collections">
     {% for block in section.blocks %}
-        <a href="#" class="collection">
+        <a href="{{ block.settings.collection.url }}" class="collection">
             <img src="{{ block.settings.collection.image.src | img_url: 'large' }}"
                 alt="{{ block.settings.collection.image.alt | escape }}" load="lazy">
             <p class="title">{{ block.settings.collection.title }} <span>{% render 'icon-arrow-black' %}</span> </p>

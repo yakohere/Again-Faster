@@ -9,7 +9,6 @@ body {
     padding: 0;
 }
 
-
 header {
     width: 100%;
     display: grid;
@@ -25,6 +24,14 @@ header {
 
 header .logo {
     grid-column: span 3;
+}
+
+.template-index header .logo svg path {
+    fill: white;
+}
+
+header .logo svg path {
+    fill: black;
 }
 
 header .logo svg {
@@ -53,7 +60,11 @@ header nav ul li a {
     font-size: 12px;
     letter-spacing: 0.175em;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: #000000;
+}
+
+.template-index header nav ul li a {
+    color: #ffffff;
 }
 
 header .icons {
@@ -69,11 +80,18 @@ header .icons li {
     list-style: none;
 }
 
+.template-index header .icons li svg path {
+    stroke: white;
+}
+
+header .icons li svg path {
+    stroke: black;
+}
+
 header .icons li svg {
     display: inline-block;
     vertical-align: middle;
 }
-
 
 .button {
     text-transform: uppercase;

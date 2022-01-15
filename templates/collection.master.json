@@ -1,0 +1,10 @@
+{
+    "sections": {
+        "collection-master-about": {
+            "type": "collection-master-about"
+        }
+    },
+    "order": [
+        "collection-master-about"
+    ]
+}

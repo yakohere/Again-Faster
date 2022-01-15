@@ -18,7 +18,7 @@
   {{ 'application.js' | asset_url | script_tag }}
 </head>
 
-<body>
+<body class="template-{{ template | handleize }}">
     {% section 'announcement-bar' %}
     {% section 'header' %}
 

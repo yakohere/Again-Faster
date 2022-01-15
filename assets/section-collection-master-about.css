@@ -1,0 +1,88 @@
+.collection-master-about {
+    height: calc(100vh - 80px);
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+
+    padding: 40px 40px 0 40px;
+    margin-top: 40px;
+}
+
+.info {
+    max-width: 510px;
+}
+
+.info .eyebrow {
+    font-family: Oswald;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.info .eyebrow .slash {
+    color: #C2A578;
+}
+
+.info h2 {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 62px;
+    letter-spacing: 0.175em;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 16px 0 40px 0;
+}
+
+.info a {
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    padding: 21px 24px;
+    width: 236px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.175em;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    color: #000000;
+}
+
+.images {
+    height: 100%;
+    width: calc(100% - 510px);
+    position: relative;
+}
+
+.images img:first-child {
+    width: calc(100% - 222px);
+    height: calc(100% - 77px);
+    object-fit: cover;
+
+    position: absolute;
+    top: 0;
+    right: 222px;
+}
+
+.images img:last-child {
+    width: 304px;
+    height: 359px;
+    object-fit: cover;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}

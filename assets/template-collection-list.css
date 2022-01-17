@@ -1,0 +1,86 @@
+.collection {
+    padding: 92px 40px;
+    font-family: Oswald;
+}
+
+.collection h1 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 130%; 
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.collection-products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.collection-products .product {
+    width: 100%;
+    text-decoration: none;
+    position: relative;
+}
+
+.collection-products .product img {
+    width: 100%;
+}
+
+.collection-products .product .product__title {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 168%;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.collection-products .product .product__price {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 168%;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #353535;
+}
+
+.collection-products .product .product__labels {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+
+.collection-products .product .product__labels .label {
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 167.5%;
+    text-align: center;
+    margin-right: 8px;
+    text-decoration: none;
+}
+
+.collection-products .product .product__labels .label--best-seller {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.collection-products .product .product__labels .label--free-shipping {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.collection-products .product .product__labels .label--pre-order {
+    background-color: transparent;
+    color: #000000;
+    border: 1px solid #C4C4C4;
+}
+
+.collection-products .product .product__labels .label--sale {
+    background: #9E0404;
+    color: #FFFFFF;
+}

@@ -1,18 +1,34 @@
-{% paginate collection.products by 2 %}
+{{ 'template-collection-list.css' | asset_url | stylesheet_tag }}
+
+<div class="collection"> 
   <h1>{{ collection.title }}</h1>
-  {% for product in collection.products %}
-    <div>
-      <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
-      {{ product.price | money }}
-      {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
-      <a href="{{ product.url | within: collection }}">
-        <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
-      </a>
-    </div>
-  {% else %}
-    <p>no matches</p>
-  {% endfor %}
-  {% if paginate.pages > 1 %}
-    {{ paginate | default_pagination }}
-  {% endif %}
-{% endpaginate %}
+
+  <div class="collection-products">
+    {% for product in collection.products %}
+        <a href="{{ product.url | within: collection }}" class="product">
+            <div class="product__labels">
+                {% if product.metafields.accentuate.best_seller %}
+                    <span class="label label--best-seller">Best Seller</span>
+                {% endif %}
+
+                {% if product.metafields.accentuate.free_shipping %}
+                    <span class="label label--free-shipping">Free Shipping</span>
+                {% endif %}
+
+                {% if product.metafields.accentuate.pre_order %}
+                    <span class="label label--pre-order">Pre-Order</span>
+                {% endif %}
+
+                {% if product.metafields.accentuate.sale %}
+                    <span class="label label--sale">SALE</span>
+                {% endif %}
+            </div>
+
+            <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
+            <p class="product__title"> {{ product.title }} </p>
+            <p class="product__price"> {{ product.price | money }} </p>
+            {% comment %} {% unless product.available %}<br><strong>sold out</strong>{% endunless %} {% endcomment %}
+        </a>
+    {% endfor %} 
+  </div>
+</div>

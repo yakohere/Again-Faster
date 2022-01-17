@@ -1,34 +1,50 @@
 {{ 'template-collection-list.css' | asset_url | stylesheet_tag }}
 
 <div class="collection"> 
-  <h1>{{ collection.title }}</h1>
+    <h1>{{ collection.title }}</h1>
 
-  <div class="collection-products">
-    {% for product in collection.products %}
-        <a href="{{ product.url | within: collection }}" class="product">
-            <div class="product__labels">
-                {% if product.metafields.accentuate.best_seller %}
-                    <span class="label label--best-seller">Best Seller</span>
-                {% endif %}
+    <div class="all-collections">
+        {%- for collection_el in collections -%}
+            <a  href="{{ collection_el.url }}" {% if collection_el.url == collection.url %} class="active" {% endif %}>{{ collection_el.title }}</a>
+            <span>/</span>
+        {%- endfor -%}
+    </div>
 
-                {% if product.metafields.accentuate.free_shipping %}
-                    <span class="label label--free-shipping">Free Shipping</span>
-                {% endif %}
+    {% if collection.products.size < 1 %}
+        <p class="collection__alert">No products yet!</p>
+    {% endif %}
 
-                {% if product.metafields.accentuate.pre_order %}
-                    <span class="label label--pre-order">Pre-Order</span>
-                {% endif %}
+    <div class="collection-products">
+        {% for product in collection.products %}
+            <a href="{{ product.url | within: collection }}" class="product">
+                <div class="product__labels">
+                    {% if product.metafields.accentuate.best_seller %}
+                        <span class="label label--best-seller">Best Seller</span>
+                    {% endif %}
 
-                {% if product.metafields.accentuate.sale %}
-                    <span class="label label--sale">SALE</span>
-                {% endif %}
-            </div>
+                    {% if product.metafields.accentuate.free_shipping %}
+                        <span class="label label--free-shipping">Free Shipping</span>
+                    {% endif %}
 
-            <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
-            <p class="product__title"> {{ product.title }} </p>
-            <p class="product__price"> {{ product.price | money }} </p>
-            {% comment %} {% unless product.available %}<br><strong>sold out</strong>{% endunless %} {% endcomment %}
-        </a>
-    {% endfor %} 
-  </div>
+                    {% if product.metafields.accentuate.pre_order %}
+                        <span class="label label--pre-order">Pre-Order</span>
+                    {% endif %}
+
+                    {% if product.metafields.accentuate.sale %}
+                        <span class="label label--sale">SALE</span>
+                    {% endif %}
+                </div>
+
+                <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}" loading="lazy">
+                <p class="product__title"> {{ product.title }} </p>
+                <div class="product__stars">
+                    {% for star in (1..product.metafields.accentuate.stars) %}
+                        {% render "icon-star" %}
+                    {% endfor %}
+                </div>
+                <p class="product__price"> {{ product.price | money }} </p>
+                {% comment %} {% unless product.available %}<br><strong>sold out</strong>{% endunless %} {% endcomment %}
+            </a>
+        {% endfor %} 
+    </div>
 </div>

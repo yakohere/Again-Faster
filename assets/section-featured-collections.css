@@ -1,14 +1,34 @@
 
 .featured-collections {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    padding: 0 40px;
-    gap: 14px;
-    margin: 97px 0;
+    width: auto; 
+    gap: 10px;
+    white-space: nowrap; 
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin: 97px 40px;
+    padding-bottom: 40px;
 }
 
+
+.featured-collections::-webkit-scrollbar {
+    height: 2px;
+}
+
+.featured-collections::-webkit-scrollbar-track {
+    background: #F1F1F1; 
+}
+
+.featured-collections::-webkit-scrollbar-thumb {
+    background: #000000;
+}
+
+
 .featured-collections .collection {
+    width: calc( (100vw - 48px - 80px) / 4);
+    display: inline-block;
+    white-space: nowrap;
     text-decoration: none;
+    margin-left: 16px;
 }
 
 .featured-collections .collection img {

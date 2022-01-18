@@ -1,0 +1,23 @@
+{{'section-collection-master-content.css' | asset_url | stylesheet_tag }}
+
+<div class="collection-master-content">
+    {% assign subcollections = collection.metafields.accentuate.subcollections | split: '|' %}
+    {% for subcollection in subcollections %}
+        <a href="{{ collections[subcollection].url }}" class="subcollection">
+            <img src="{{ collections[subcollection].image.src | img_url: 'large' }}"
+                alt="{{ collections[subcollection].image.alt | escape }}" loading="lazy">
+            <p class="title">{{ collections[subcollection].title }} <span>{% render 'icon-arrow-black' %}</span> </p>
+        </a>
+    {% endfor %}
+</div>
+
+
+{% schema %}
+    {
+        "name": "collection-master-content",
+        "settings": [],
+        "presets": [{
+            "name": "collection-master-content"
+        }]
+    }
+{% endschema %}

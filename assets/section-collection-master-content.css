@@ -1,0 +1,39 @@
+.collection-master-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding: 40px 40px 80px 40px;
+}
+
+.collection-master-content .subcollection {
+    text-decoration: none;
+    text-align: center;
+}
+
+.collection-master-content .subcollection .title span {
+    margin-left: 9px;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.collection-master-content .subcollection:hover > .title span {
+    opacity: 1;
+}
+
+.collection-master-content .subcollection .title {
+    width: 100%;
+    display: block;
+    font-family: Oswald;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 168%;
+ 
+    text-align: center;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000000;
+    margin-top: 8px;
+    cursor: pointer;
+}

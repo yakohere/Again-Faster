@@ -1,10 +1,14 @@
 {
     "sections": {
-        "collection-master-about": {
-            "type": "collection-master-about"
+        "collection-master-hero": {
+            "type": "collection-master-hero"
+        },
+        "collection-master-content": {
+            "type": "collection-master-content"
         }
     },
     "order": [
-        "collection-master-about"
+        "collection-master-hero",
+        "collection-master-content"
     ]
 }

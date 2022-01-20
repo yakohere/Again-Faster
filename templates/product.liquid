@@ -1,33 +1,67 @@
+{{ "product-description.css" | asset_url | stylesheet_tag }}
 
 {% assign current_variant = product.selected_or_first_available_variant %}
 {% assign featured_image = current_variant.featured_image | default: product.featured_image %}
 
-<img src="{{ featured_image | img_url: 'large' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg">
+<div class="product-description-wrapper">
+    <img class="featured-image" src="{{ featured_image | img_url: 'large' }}" alt="{{ featured_image.alt | escape }}">
 
-{% for image in product.images %}
-  <a href="{{ image.src | img_url: 'large' }}">
-    <img src="{{ image.src | img_url: 'compact' }}" alt="{{ image.alt | escape }}">
-  </a>
-{% endfor %}
+    <div class="product-detail">
+        <h1 class="product-title">{{ product.title }}</h1>
+        <p class="product-price" >{{ current_variant.price | money }}</p>
+        <div class="product-stars">
+            {% for star in (1..product.metafields.accentuate.stars) %}
+                {% render "icon-star" %}
+            {% endfor %}
+        </div>
+        <p class="product-description">{{ product.description }}</p>
+    
+        <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
+            <ul>
+                {% for variant in product.variants %}
+                    <li {% if variant.available %} class="variant" {% else %} class="variant sold-out" {% endif %}>
+                        {{ variant.title }}
+                    </li>
+                {% endfor %}
+            </ul>
+            {% if product.metafields.accentuate.free_shipping %}
+                    <p class="free-shipping">Available for Free shipping!</p>
+            {% endif %}
+            {% comment %} <select name="id" id="productSelect">
+                {% for variant in product.variants %}
+                    {% if variant.available %} 
+                        <option value="{{ variant.id }}">
+                            {{ variant.title }} - {{ variant.price | money_with_currency }}
+                        </option>
+                    {% else %}
+                    <option disabled="disabled">
+                        {{ variant.title }} - sold out
+                    </option>
+                    {% endif %}
+                {% endfor %}
+            </select> {% endcomment %}
+            <button type="submit" name="add" id="AddToCart">Add to cart</button>
+        </form>
 
-<h1>{{ product.title }}</h1>
-<form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
-  <select name="id" id="productSelect">
-    {% for variant in product.variants %}
-      {% if variant.available %}
-        <option value="{{ variant.id }}">
-          {{ variant.title }} - {{ variant.price | money_with_currency }}
-        </option>
-      {% else %}
-        <option disabled="disabled">
-          {{ variant.title }} - sold out
-        </option>
-      {% endif %}
-    {% endfor %}
-  </select>
-  {{ current_variant.price | money }}
-  <label for="Quantity">quantity</label>
-  <input type="number" id="Quantity" name="quantity" value="1" min="1">
-  <button type="submit" name="add" id="AddToCart">Add to cart</button>
-</form>
-<div>{{ product.description }}</div>
+        <hr></hr>
+        <h2>Frequently bought with</h2>
+        <div class="freq-bought-products">
+            {% assign freq_bought_products = product.metafields.accentuate.freq_bought_with_products | split: '|' %}
+            {% for freq_bought_product in freq_bought_products %}
+                <div class="freq_bought_product">
+                    <img src="{{ all_products[freq_bought_product].featured_image.src | img_url: 'small' }}"
+                        alt="{{ all_products[freq_bought_product].featured_image.alt | escape }}" loading="lazy">
+                    <div>
+                        <p class="title">{{ all_products[freq_bought_product].title }} </p>
+                        <a class="freq-bought-product-add-to-cart" href="#">Add to cart</a>
+                    </div>
+                </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+</div>
+
+ {% comment %} {{ current_variant.price | money }}
+        <label for="Quantity">quantity</label>
+        <input type="number" id="Quantity" name="quantity" value="1" min="1"> {% endcomment %}

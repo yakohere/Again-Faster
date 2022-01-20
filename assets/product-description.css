@@ -1,0 +1,120 @@
+.product-description-wrapper {
+    display: flex;
+    margin-top: 52px;
+    font-family: Open Sans;
+}
+
+.featured-image {
+    width: 50%;
+    height: calc(100vh - 92px);
+    object-fit: cover;
+}
+
+.product-detail {
+    padding: 40px 123px 40px 123px;
+}
+
+.product-title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 130%;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.product-price {
+    font-size: 14px;
+    line-height: 167.5%;
+    color: #000000;
+    margin: 8px 0 13px 0;
+}
+
+.product-description {
+    margin: 24px 0 16px 0;
+    font-size: 14px;
+    line-height: 167.5%;
+    color: #000000;
+}
+
+form ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+form ul li {
+    list-style: none;
+    padding: 16px 40px;
+    font-size: 14px;
+    line-height: 167.5%;
+    color: #000000;
+    border: 1px solid #F1F1F1;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+form .free-shipping {
+    font-size: 14px;
+    line-height: 167.5%;
+    color: #979797;
+    margin: 16px 0 24px 0;
+}
+
+form button[type=submit] {
+    background: #000000;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.175em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    padding: 14px 0;
+    border: none;
+    width: 100%;
+}
+
+.freq-bought-products {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.freq-bought-products .freq_bought_product {
+    width: 100%;
+    display: flex;
+    gap: 16px;
+}
+
+.freq_bought_products .freq_bought_product img {
+    width: 98px;
+    height: 125px;
+    object-fit: cover;
+}
+
+.product-detail hr {
+    border: 1px solid #F1F1F1;
+    margin: 24px 0 16px 0;
+}
+
+.product-detail h2 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 167.5%;
+    color: #000000;
+    margin-bottom: 24px;
+}
+
+.freq_bought_product .title {
+    font-size: 14px;
+    line-height: 167.5%;
+    color: #000000;
+    margin-top: 20px;
+}
+
+.freq_bought_product .freq-bought-product-add-to-cart {
+    font-size: 14px;
+    line-height: 167.5%;
+    text-decoration-line: underline;
+    color: #000000;
+}

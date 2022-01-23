@@ -3,7 +3,7 @@
     font-family: Oswald;
 }
 
-.collection h1 {
+.collection__title {
     font-weight: 600;
     font-size: 24px;
     line-height: 130%; 
@@ -13,12 +13,12 @@
     text-align: center;
 }
 
-.collection .all-collections {
+.collection__nav {
     margin: 29px 0 47px 0;
     text-align: center;
 }
 
-.collection .all-collections a {
+.collection__nav-link {
     text-decoration: none;
     font-family: Open Sans;
     font-size: 12px;
@@ -29,71 +29,46 @@
     padding-bottom: 5px;
 }
 
-.collection .all-collections .active {
+.collection__nav-link--active {
     color: #000000;
     border-bottom: 2px solid #C2A578;
 }
 
-.collection .all-collections span {
+.collection__nav-seperator {
     margin: 0 8px;
     color: #C4C4C4;
 }
 
-.collection .all-collections span:last-child {
+.collection__nav-seperator:last-child {
     display: none;
 }
 
-.collection .collection__alert {
+.collection__no-product-alert {
     text-align: center;
 }
 
-.collection-products {
+.collection__product-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
 }
 
-.collection-products .product {
+.collection__product {
     width: 100%;
     text-decoration: none;
     position: relative;
     margin-bottom: 40px;
 }
 
-.collection-products .product img {
-    width: 100%;
-}
 
-.collection-products .product .product__title {
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 168%;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: #000000;
-}
-
-.collection-products .product .product__stars {
-    margin: 8px 0;
-}
-
-.collection-products .product .product__price {
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 168%;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: #353535;
-}
-
-.collection-products .product .product__labels {
+.collection__product-label-list {
     font-family: Open Sans;
     position: absolute;
     top: 8px;
     left: 8px;
 }
 
-.collection-products .product .product__labels .label {
+.collection__product-label {
     padding: 4px 8px;
     font-size: 12px;
     font-weight: normal;
@@ -103,23 +78,49 @@
     text-decoration: none;
 }
 
-.collection-products .product .product__labels .label--best-seller {
+.collection__product-label--best-seller {
     background-color: #000000;
     color: #FFFFFF;
 }
 
-.collection-products .product .product__labels .label--free-shipping {
+.collection__product-label--free-shipping {
     background-color: #FFFFFF;
     color: #000000;
 }
 
-.collection-products .product .product__labels .label--pre-order {
+.collection__product-label--pre-order {
     background-color: transparent;
     color: #000000;
     border: 1px solid #C4C4C4;
 }
 
-.collection-products .product .product__labels .label--sale {
+.collection__product-label--sale {
     background: #9E0404;
     color: #FFFFFF;
+}
+
+.collection__product-image {
+    width: 100%;
+}
+
+.collection__product--title {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 168%;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.collection__product--stars {
+    margin: 8px 0;
+}
+
+.collection__product--price {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 168%;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #353535;
 }

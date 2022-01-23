@@ -1,48 +1,55 @@
 {{ 'template-collection-list.css' | asset_url | stylesheet_tag }}
 
 <div class="collection"> 
-    <h1>{{ collection.title }}</h1>
+    <h1 class="collection__title">{{ collection.title }}</h1>
 
-    <div class="all-collections">
-        {%- for collection_el in collections -%}
-            <a  href="{{ collection_el.url }}" {% if collection_el.url == collection.url %} class="active" {% endif %}>{{ collection_el.title }}</a>
-            <span>/</span>
+    <div class="collection__nav">
+        {%- for collection_element in collections -%}
+            <a 
+                href="{{ collection_element.url }}" 
+                class="collection__nav-link {% if collection_element.url == collection.url %} collection__nav-link--active {% endif %}"
+            >
+                {{ collection_element.title }}
+            </a>
+            <span class="collection__nav-seperator">/</span>
         {%- endfor -%}
     </div>
 
     {% if collection.products.size < 1 %}
-        <p class="collection__alert">No products yet!</p>
+        <p class="collection__no-product-alert">No products yet!</p>
     {% endif %}
 
-    <div class="collection-products">
+    <div class="collection__product-list">
         {% for product in collection.products %}
-            <a href="{{ product.url | within: collection }}" class="product">
-                <div class="product__labels">
-                    {% if product.metafields.accentuate.best_seller %}
-                        <span class="label label--best-seller">Best Seller</span>
+            <a class="collection__product" href="{{ product.url | within: collection }}">
+                <div class="collection__product-label-list">
+                    {% assign product_tags_string = product.tags | join ' ' %}
+                
+                    {% if product_tags_string contains 'best_seller' %}
+                        <span class="collection__product-label collection__product-label--best-seller">Best Seller</span>
                     {% endif %}
 
-                    {% if product.metafields.accentuate.free_shipping %}
-                        <span class="label label--free-shipping">Free Shipping</span>
+                    {% if product_tags_string contains 'free_shipping' %}
+                        <span class="collection__product-label collection__product-label--free-shipping">Free Shipping</span>
                     {% endif %}
-
+                    
                     {% if product.metafields.accentuate.pre_order %}
-                        <span class="label label--pre-order">Pre-Order</span>
+                        <span class="collection__product-label collection__product-label--pre-order">Pre-Order</span>
                     {% endif %}
 
                     {% if product.metafields.accentuate.sale %}
-                        <span class="label label--sale">SALE</span>
+                        <span class="collection__product-label collection__product-label--sale">SALE</span>
                     {% endif %}
                 </div>
 
-                <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}" loading="lazy">
-                <p class="product__title"> {{ product.title }} </p>
-                <div class="product__stars">
+                <img class="collection__product-image" src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}" loading="lazy">
+                <p class="collection__product--title"> {{ product.title }} </p>
+                <div class="collection__product--stars">
                     {% for star in (1..product.metafields.accentuate.stars) %}
                         {% render "icon-star" %}
                     {% endfor %}
                 </div>
-                <p class="product__price"> {{ product.price | money }} </p>
+                <p class="collection__product--price"> {{ product.price | money }} </p>
                 {% comment %} {% unless product.available %}<br><strong>sold out</strong>{% endunless %} {% endcomment %}
             </a>
         {% endfor %} 

@@ -21,7 +21,7 @@
 .product__detail {
     width: 100%;
     height: 100%;
-    padding: 40px 123px 40px 123px;
+    padding: 20px 100px 40px 100px;
 }
 
 .product__title {
@@ -34,21 +34,21 @@
 }
 
 .product__price {
-    font-size: 14px;
+    font-size: 10px;
     line-height: 167.5%;
     color: #000000;
     margin: 8px 0 13px 0;
 }
 
 .product__description {
-    margin: 24px 0 16px 0;
+    margin: 14px 0 16px 0;
     font-size: 14px;
     line-height: 167.5%;
     color: #000000;
 }
 
 .product__variants-list {
-    height: 100px;
+    height: 200px;
     overflow-y: scroll;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -126,7 +126,7 @@
 /* Frequently Bought Products Styles */
 
 .freq-bought-products {
-    margin-top: 24px;
+    margin-top: q4px;
     border-top: 1px solid #F1F1F1;
 }
 
@@ -162,7 +162,7 @@
 }
 
 .ffreq_bought_products__list-item-add-to-cart-button {
-    font-size: 14px;
+    font-size: 8px;
     line-height: 167.5%;
     text-decoration-line: underline;
     color: #000000;
@@ -216,12 +216,12 @@
     z-index: 200;
 }
 
-.product__presentation:nth-child(odd) .product__presentation-text {
+.product__presentation:nth-child(even) .product__presentation-text {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
 }
 
-.product__presentation:nth-child(odd) .product__presentation-image-block {
+.product__presentation:nth-child(even) .product__presentation-image-block {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
 }
@@ -246,4 +246,98 @@
 
 .product__presentation .vertical-lines span:last-child {
     left: 75%;
+}
+
+.related-products__wrapper {
+    padding: 0 40px;
+    font-family: Open Sans;
+}
+
+.related-products__wrapper h2 {
+    font-size: 28px;
+    line-height: 130%;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #000000;
+    margin-top: 80px;
+    font-weight: 300;
+}
+
+.related-products__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding: 40px 0;
+}
+
+.related__product {
+    width: 100%;
+    text-decoration: none;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+
+.related__product-label-list {
+    font-family: Open Sans;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+
+.related__product-label {
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 167.5%;
+    text-align: center;
+    margin-right: 8px;
+    text-decoration: none;
+}
+
+.related__product-label--best-seller {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.related__product-label--free-shipping {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.related__product-label--pre-order {
+    background-color: transparent;
+    color: #000000;
+    border: 1px solid #C4C4C4;
+}
+
+.related__product-label--sale {
+    background: #9E0404;
+    color: #FFFFFF;
+}
+
+.related__product-image {
+    width: 100%;
+}
+
+.related__product--title {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 168%;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.related__product--stars {
+    margin: 8px 0;
+}
+
+.related__product--price {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 168%;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #353535;
 }

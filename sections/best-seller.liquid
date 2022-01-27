@@ -1,15 +1,21 @@
-{{ 'section-best-seller.css' | asset_url | stylesheet_tag }}
+<div class="best-seller__wrapper">
+    <img class="best-seller__left-image" src="{{ section.settings.image_one | img_url: ''}}" alt="boy-lifting" loading="lazy" />
 
-<div class="best-seller">
-    <img src="{{ section.settings.image_one | img_url: ''}}" alt="boy-lifting" loading="lazy" />
-
-    <div class="more-info">
-        <img src="{{ section.settings.image_two | img_url: ''}}" alt="boy-jumping" loading="lazy" />
-        <span>{{ section.settings.title | escape }}</span>
-        <h2>{{ section.settings.sub_title | escape }}</h2>
-        <p>{{ section.settings.paragraph | escape }}</p>
-        <a {% if section.settings.button_link==blank %} role="link" aria-disabled="true" {% else %}
-            href="{{ section.settings.button_link }}" {% endif %}>{{ section.settings.button | escape }}</a>
+    <div class="best-seller__content">
+        <img class="best-seller__right-image" src="{{ section.settings.image_two | img_url: ''}}" alt="boy-jumping" loading="lazy" />
+        <span class="best-seller__title">{{ section.settings.title | escape }}</span>
+        <h2 class="best-seller__sub-title">{{ section.settings.sub_title | escape }}</h2>
+        <p class="best-seller__description">{{ section.settings.paragraph | escape }}</p>
+        <a 
+            class="best-seller__button"
+            {% if section.settings.button_link == blank %} 
+                role="link" aria-disabled="true" 
+            {% else %}
+                href="{{ section.settings.button_link }}" 
+            {% endif %}
+        >
+            {{ section.settings.button | escape }}
+        </a>
 </div>
 
 {% schema %}

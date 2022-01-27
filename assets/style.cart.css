@@ -16,7 +16,7 @@
 
 .cart_title {
     font-family: Open Sans;
-    font-size: 24px;
+    font-size: 2rem;
     line-height: 130%;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -55,26 +55,26 @@
 .item__title {
     font-family: Oswald;
     font-weight: 300;
-    font-size: 12px;
+    font-size: 1rem;
     line-height: 168%;
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: #000000;
     text-decoration: none;
-    margin-bottom: 12px;
+    margin-bottom: 1rem;
 }
 
 .item__variant {
     font-style: normal;
     font-weight: normal;
-    font-size: 12px;
+    font-size: 1rem;
     line-height: 167.5%;
     color: #000000;
     margin-bottom: 40px;
 }
 
 .item__price {
-    font-size: 12px;
+    font-size: 1rem;
     line-height: 167.5%;
     color: #000000;
     position: absolute;
@@ -104,7 +104,7 @@
 }
 
 .form__sub-total {
-    font-size: 16px;
+    font-size: 1.3rem;
     line-height: 168%;
     text-align: center;
     letter-spacing: 0.1em;
@@ -116,7 +116,7 @@
 }
 
 .form__shipping-info {
-    font-size: 14px;
+    font-size: 1.167rem;
     line-height: 167.5%;
     color: #000000;
     margin: 11px 0 24px 0;
@@ -125,8 +125,8 @@
 .form__button {
     width: 100%;
     background: #000000;
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 1rem;
+    line-height: 1.3rem;
     text-align: center;
     letter-spacing: 0.175em;
     text-transform: uppercase;

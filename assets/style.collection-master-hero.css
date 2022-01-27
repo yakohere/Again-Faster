@@ -18,7 +18,7 @@
     font-family: Oswald;
     font-style: normal;
     font-weight: 300;
-    font-size: 12px;
+    font-size: 1rem;
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: #000000;
@@ -32,8 +32,8 @@
     font-family: Open Sans;
     font-style: normal;
     font-weight: bold;
-    font-size: 40px;
-    line-height: 62px;
+    font-size: 3.3rem;
+    line-height: 5.1rem;
     letter-spacing: 0.175em;
     text-transform: uppercase;
     color: #000000;
@@ -52,8 +52,8 @@
     font-family: Open Sans;
     font-style: normal;
     font-weight: normal;
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 1rem;
+    line-height: 1.3rem;
     letter-spacing: 0.175em;
     text-transform: uppercase;
     text-decoration: none;

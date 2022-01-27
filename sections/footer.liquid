@@ -1,20 +1,20 @@
-{{ 'section-footer.css' | assets_url | stylesheet_tag }}
+<footer class="footer">
+    <span class="footer__icon-af">{% render 'icon-af' %}</span>
 
-<footer>
-    {% render 'icon-af' %}
-    <div class="news-letter">
-        <p class="title">{{ 'general.footer.news-letter-title' | t }}</p>
-        <div class="input-wrapper">
+    <div class="footer__news-letter-block">
+        <p class="footer__title">{{ 'general.footer.news-letter-title' | t }}</p>
+        
+        <div class="news-letter__form">
             {% form 'customer' %}
                 <input name="contact[tags]" type="hidden" value="newsletter" />
-                <input placeholder="Enter your email" type="email" name="contact[email]" />
-                <button type="submit" name="commit">
+                <input class="news-letter__form-input" placeholder="Enter your email" type="email" name="contact[email]" />
+                <button class="news-letter__form-button" type="submit" name="commit">
                     {% render 'icon-arrow-black' %}
                 </button>
             {% endform %}
         </div>
 
-        <div class="social-media-icons">
+        <div class="news-letter__form-social-media-icons">
             {%- if section.settings.facebook_url != blank -%}
                 <a href="{{ section.settings.facebook_url }}" >
                     {% render 'icon-facebook' %}
@@ -33,9 +33,9 @@
         </div>  
     </div>
 
-    <div>
-        <p class="title">{{ 'general.footer.nav-links-title' | t }}</p>
-        <div class="nav-links">
+    <div class="footer__nav-links-wrapper">
+        <p class="footer__title">{{ 'general.footer.nav-links-title' | t }}</p>
+        <div class="footer__nav-links-list">
             {% for link in linklists.main-menu.links %}
                 {% assign child_list_handle = link.title | handleize %}
                 {% if linklists[child_list_handle].links != blank %}
@@ -49,7 +49,7 @@
             {% endfor %}
         </div>
     </div>
-    <p class="copyright">{{ 'general.footer.copyright' | t }}</p>
+    <p class="footer__copyright-info">{{ 'general.footer.copyright' | t }}</p>
 </footer>
 
 

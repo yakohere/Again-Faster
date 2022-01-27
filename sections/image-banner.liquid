@@ -1,17 +1,23 @@
-{{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
-
-<div class="image-banner">
+<div class="image-banner-wrapper">
     <img 
-        class="hero-img" 
+        class="banner__hero-img" 
         src="{{ section.settings.image | img_url: '1920x1080'}}" 
         alt="image-banner"
-        loadin="lazy"
+        loading="lazy"
     />
-    <div class="content">
-        <h2>{{ section.settings.heading }}</h2>
-        <p>{{ section.settings.paragraph }}</p>
-        <a {% if section.settings.button_link == blank %} role="link" aria-disabled="true" {% else %} href="{{ section.settings.button_link }}" {% endif %} class="button outline">
-            {{ section.settings.button }} {% render 'icon-arrow-white' %}
+    <div class="banner__content">
+        <h2 class="banner__title">{{ section.settings.heading }}</h2>
+        <p class="banner__description">{{ section.settings.paragraph }}</p>
+        <a 
+            {% if section.settings.button_link == blank %} 
+                role="link" aria-disabled="true" 
+            {% else %} 
+                href="{{ section.settings.button_link }}" 
+            {% endif %} 
+            class="banner__button banner__button--outline"
+        >
+            {{ section.settings.button }} 
+            {% render 'icon-arrow-white' %}
         </a>       
     </div>
 </div>

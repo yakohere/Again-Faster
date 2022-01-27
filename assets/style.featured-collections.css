@@ -1,5 +1,5 @@
 
-.featured-collections {
+.featured-collections-wrapper {
     width: auto; 
     gap: 10px;
     white-space: nowrap; 
@@ -9,21 +9,20 @@
     padding-bottom: 40px;
 }
 
-
-.featured-collections::-webkit-scrollbar {
+.featured-collections-wrapper::-webkit-scrollbar {
     height: 2px;
 }
 
-.featured-collections::-webkit-scrollbar-track {
+.featured-collections-wrapper::-webkit-scrollbar-track {
     background: #F1F1F1; 
 }
 
-.featured-collections::-webkit-scrollbar-thumb {
+.featured-collections-wrapper::-webkit-scrollbar-thumb {
     background: #000000;
 }
 
 
-.featured-collections .collection {
+.featured-collection {
     width: calc( (100vw - 48px - 80px) / 4);
     display: inline-block;
     white-space: nowrap;
@@ -31,17 +30,17 @@
     margin-left: 16px;
 }
 
-.featured-collections .collection img {
+.featured-collection__image {
     width: 100%;
 }
 
-.featured-collections .collection .title {
+.featured-collection__title {
     width: 100%;
     display: block;
     font-family: Oswald;
     font-style: normal;
     font-weight: 300;
-    font-size: 12px;
+    font-size: 1rem;
     line-height: 168%;
  
     text-align: center;
@@ -53,12 +52,12 @@
     cursor: pointer;
 }
 
-.featured-collections .collection .title span {
+.featured-collection__title span {
     margin-left: 9px;
     opacity: 0;
     transition: 0.4s;
 }
 
-.featured-collections .collection:hover > .title span {
+.featured-collection:hover > .featured-collection__title span {
     opacity: 1;
 }

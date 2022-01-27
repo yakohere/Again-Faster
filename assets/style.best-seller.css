@@ -1,21 +1,22 @@
 
-.best-seller {
+.best-seller__wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 65px;
     padding: 120px 40px 120px 0;
+    font-family: Open Sans;
 }
 
-.best-seller > img {
+.best-seller__left-image {
     width: 60%;
 }
 
-.best-seller .more-info span {
+.best-seller__title {
     font-family: Oswald;
     font-style: normal;
     font-weight: 300;
-    font-size: 12px;
+    font-size: 1rem;
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: #000000;
@@ -23,38 +24,29 @@
     margin: 40px 0 8px 0;
 }
 
-.best-seller .more-info h2 {
-    font-family: Open Sans;
-    font-style: normal;
+.best-seller__sub-title {
     font-weight: 600;
-    font-size: 24px;
+    font-size: 2rem;
     line-height: 130%;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: #000000;
 }
 
-.best-seller .more-info p {
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
+.best-seller__description {
+    font-size: 1.167rem;
     color: #8F8F8F;
     margin: 16px 0 40px 0;
 }
 
-.best-seller .more-info a {
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 16px;
+.best-seller__button {
+    font-size: 1rem;
+    line-height: 1.3rem;
     text-transform: uppercase;
     color: #000000;
-
     border-bottom: 1px solid #000000;
 }
 
-.best-seller .more-info img {
+.best-seller__right-image{
     width: 100%;
 }

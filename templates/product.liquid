@@ -2,13 +2,8 @@
     const currentProductId = {{ product.id }};
 </script>
 
-{{ "product-description.css" | asset_url | stylesheet_tag }}
-{{ "product-description.js" | asset_url | script_tag  }}
-
 {% assign current_variant = product.selected_or_first_available_variant %}
 {% assign featured_image = current_variant.featured_image | default: product.featured_image %}
-
-
 
 <div class="product__wrapper">
     <div class="product_featuerd-image-block">
@@ -68,7 +63,7 @@
                     {% endif %}
                 {% endfor %}
             </select>
-            <button class="product__form-submit-button" type="submit" name="add" id="AddToCart">Add to cart</button>
+            <button class="product__form-submit-button" onclick="showCart()" type="button" name="add" id="AddToCart">Add to cart</button>
         </form>
 
         <div class="freq-bought-products">
@@ -117,4 +112,10 @@
 <div class="related-products__wrapper">
     <h2>You might also like</h2>
     <div class="related-products__list"></div>
+</div>
+
+<div class="ajax-cart__wrapper">
+    <div class="ajax-cart__content">
+    
+    </div>
 </div>

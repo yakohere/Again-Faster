@@ -1,33 +1,19 @@
-<header>
-    <a href="https://again-faster-yako.myshopify.com" class="logo">
+<nav class="header">
+    <a class="header__logo" href="https://again-faster-yako.myshopify.com">
         {% render "icon-logo" %} 
     </a>
-    <nav>
-        <ul>
-            {% for link in linklists.main-menu.links %}
-            <li>
-                {% assign child_list_handle = link.title | handleize %}
-                {% if linklists[child_list_handle].links != blank %}
-                    <a href="{{ link.url }}">{{ link.title }}</a>
-                    [{% for childlink in linklists[child_list_handle].links %}
-                        <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
-                    {% endfor %}]
-                {% else %}
-                    <a href="{{ link.url }}">{{ link.title }}</a>
-                {% endif %}
+
+    <ul class="header__link-list">
+        {% for link in linklists.main-menu.links %}
+            <li class="header__link-list-item">
+                <a class="header__link-list-item-link" href="{{ link.url }}">{{ link.title }}</a>
             </li>
-            {% endfor %}
-        </ul>
-    </nav>
-    <ul class="icons">
-        <li>
-            {% render 'icon-search' %}
-        </li>
-        <li>
-            {% render 'icon-bag' %}
-        </li>
-        <li>
-            {% render 'icon-account' %}
-        </li>
+        {% endfor %}
     </ul>
-</header>
+
+    <ul class="header__icon-list">
+        <li class="header__icon-list-item"> {% render 'icon-search' %} </li>
+        <li class="header__icon-list-item"> {% render 'icon-bag' %} </li>
+        <li class="header__icon-list-item"> {% render 'icon-account' %} </li>
+    </ul>
+</nav>

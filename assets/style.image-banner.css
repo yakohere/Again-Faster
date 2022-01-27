@@ -1,5 +1,4 @@
-
-.image-banner {
+.image-banner-wrapper {
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -7,7 +6,7 @@
     z-index: 100;
 }
 
-.image-banner .hero-img {
+.banner__hero-img {
     width: 100%;
     height: calc(100vh - 40px);
     object-fit: cover;
@@ -17,17 +16,17 @@
     pointer-events: none;
 }
 
-.image-banner .content {
+.banner__content {
     position: absolute;
     bottom: 40px;
     left: 40px;
 }
 
-.image-banner .content h2 {
+.banner__title {
     font-family: Open Sans;
     font-style: normal;
     font-weight: bold;
-    font-size: 60px;
+    font-size: 5rem;
     letter-spacing: 0.24em;
     text-transform: uppercase;
     color: #FFFFFF; 
@@ -35,19 +34,36 @@
     white-space: break-space; 
 }
 
-.image-banner .content p {
+.banner__description {
     font-family: Open Sans;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
+    font-size: 1.167rem;
     color: #FFFFFF;
     max-width: 550px;
     margin: 24px 0 40px 0;
 }
 
-.image-banner .content a {
+.banner__button {
+    width: 230px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
     cursor: pointer;
+    text-transform: uppercase;
+    padding: 21px 24px;
+    
+    font-family: Open Sans;
+    font-size: 1rem;
+    line-height: 1.3rem;
+    letter-spacing: 0.175em;
+    text-transform: uppercase;
+}
+
+.banner__button--outline {
+    border: 1px solid #FFFFFF;
+    background: transparent;
+    color: white;
 }

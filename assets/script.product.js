@@ -8,9 +8,7 @@ async function renderRecomendedProducts(productId) {
   let response = await fetch(`/recommendations/products.json?product_id=${productId}`);
   const responseJSON = await response.json();
   let products = responseJSON.products
-  products = products.splice(0, 4); 
-  
-  console.log(products)
+  products = products.splice(0, 4);
 
   const relatedProductList = document.querySelector(".related-products__list")
 
@@ -29,12 +27,20 @@ async function renderRecomendedProducts(productId) {
 
       </div>
       <p class="related__product--price"> ${(product.price / 100).toLocaleString('en-US', {
-        style: 'currency',
-        currency: 'USD',
-      })} </p>
-    ` 
-    relatedProductList.appendChild(relatedProduct) 
+      style: 'currency',
+      currency: 'USD',
+    })} </p>
+    `
+    relatedProductList.appendChild(relatedProduct)
   })
 }
 
 renderRecomendedProducts(currentProductId)
+
+function showCart() {
+  const cartWrapper = document.querySelector(".ajax-cart__wrapper")
+  const cartContent = document.querySelector(".ajax-cart__content")
+
+  cartContent.classList.toggle("ajax-cart__content_open")
+  cartWrapper.classList.toggle("ajax-cart__wrapper_open")
+}

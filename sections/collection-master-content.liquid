@@ -1,5 +1,3 @@
-{{'section-collection-master-content.css' | asset_url | stylesheet_tag }}
-
 <div class="collection-master-content">
     {% assign subcollections = collection.metafields.accentuate.subcollections | split: '|' %}
     {% for subcollection in subcollections %}

@@ -5,7 +5,7 @@
 
 .collection__title {
     font-weight: 600;
-    font-size: 24px;
+    font-size: 2rem;
     line-height: 130%; 
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -21,7 +21,7 @@
 .collection__nav-link {
     text-decoration: none;
     font-family: Open Sans;
-    font-size: 12px;
+    font-size: 1rem;
     line-height: 140%;
     letter-spacing: 0.175em;
     text-transform: uppercase;

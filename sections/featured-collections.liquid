@@ -1,16 +1,11 @@
-{{ 'section-featured-collections.css' | asset_url | stylesheet_tag }}
-
-<div class="featured-collections" id="js-scroll">
+<div class="featured-collections-wrapper" id="js-scroll">
     {% for block in section.blocks %}
-        <a href="{{ block.settings.collection.url }}" class="collection">
-            <img src="{{ block.settings.collection.image.src | img_url: 'large' }}"
-                alt="{{ block.settings.collection.image.alt | escape }}" loading="lazy">
-            <p class="title">{{ block.settings.collection.title }} <span>{% render 'icon-arrow-black' %}</span> </p>
+        <a href="{{ block.settings.collection.url }}" class="featured-collection">
+            <img class="featured-collection__image"" src="{{ block.settings.collection.image.src | img_url: 'large' }}" alt="{{ block.settings.collection.image.alt | escape }}" loading="lazy">
+            <p class="featured-collection__title">{{ block.settings.collection.title }} <span>{% render 'icon-arrow-black' %}</span> </p>
         </a>
     {% endfor %}
 </div>
-
-{{ 'js-scroll.js' | asset_url | script_tag }}
 
 {% schema %}
     {

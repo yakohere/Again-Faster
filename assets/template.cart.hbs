@@ -1,6 +1,7 @@
 <div class="cart__wrapper">
+    {{#if items}}
     <div class="cart__header">
-        <p class="cart_title">My Cart</p>
+        <p class="cart_title">{{title}}</p>
         <img src="{{xIcon}}" alt="" onclick="toggleCart()" />
     </div>
     <div class="cart__items-list">
@@ -38,7 +39,13 @@
             <span>Sub total</span>
             <span>{{sub_total}}</span>
         </div>
-        <p class="form__shipping-info">Tax and shipping calculates at checkout.</p>
-        <button class="form__button" type="submit" name="checkout">Continue to Checkout</button>
+        <p class="form__shipping-info">{{taxText}}</p>
+        <button class="form__button" type="submit" name="checkout">{{checkoutText}}</button>
     </form>
+    {{else}}
+    <div class="cart__empty-block">
+        <p class="cart_empty-message">{{cartEmptyText}}</p>
+        <a class="cart_empty-link" href="/collections/popular">{{buttonText}}</a>
+    </div>
+    {{/if}}
 </div>

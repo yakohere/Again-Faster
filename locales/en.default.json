@@ -8,6 +8,13 @@
       "news-letter-title": "News Letter",
       "nav-links-title": "Again Faster",
       "copyright": "©2020 Again Faster. All Rights Reserved"
+    },
+    "cart": {
+      "cart-empty": "Your Cart is Empty",
+      "shop-best-sellers": "Shop Best Sellers",
+      "checkout": "Continue to Checkout",
+      "tax": "Tax and shipping calculates at checkout.",
+      "title": "My Cart"
     }
   }
 }

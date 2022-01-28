@@ -1,4 +1,3 @@
-// Put your application javascript here
 const slider = document.getElementById("js-scroll");
 
 const preventClick = (e) => {
@@ -23,22 +22,22 @@ slider.addEventListener("mouseleave", () => {
 slider.addEventListener("mouseup", (e) => {
   isDown = false;
   const elements = document.querySelectorAll("a");
-  if(isDragged){
-      for(let i = 0; i<elements.length; i++){
-            elements[i].addEventListener("click", preventClick);
-      }
+  if (isDragged) {
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].addEventListener("click", preventClick);
+    }
   }
-  else{
-      for(let i = 0; i<elements.length; i++){
-            elements[i].removeEventListener("click", preventClick);
-      }
+  else {
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].removeEventListener("click", preventClick);
+    }
   }
   slider.classList.remove("active");
-  isDragged =  false;
+  isDragged = false;
 });
 slider.addEventListener("mousemove", e => {
   if (!isDown) return;
-  isDragged =  true;
+  isDragged = true;
   e.preventDefault();
   const x = e.pageX - slider.offsetLeft;
   const walk = (x - startX) * 2;

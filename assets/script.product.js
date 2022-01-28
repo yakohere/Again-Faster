@@ -36,11 +36,3 @@ async function renderRecomendedProducts(productId) {
 }
 
 renderRecomendedProducts(currentProductId)
-
-function showCart() {
-  const cartWrapper = document.querySelector(".ajax-cart__wrapper")
-  const cartContent = document.querySelector(".ajax-cart__content")
-
-  cartContent.classList.toggle("ajax-cart__content_open")
-  cartWrapper.classList.toggle("ajax-cart__wrapper_open")
-}

@@ -161,7 +161,7 @@
     margin-top: 20px;
 }
 
-.ffreq_bought_products__list-item-add-to-cart-button {
+.freq_bought_products__list-item-add-to-cart-button {
     font-size: 0.6rem;
     line-height: 167.5%;
     text-decoration-line: underline;
@@ -187,6 +187,10 @@
     z-index: 200;
 }
 
+.product__presentation-text p {
+    font-size: 1.16rem;
+}
+
 .product__presentation-text h2 {
     margin-bottom: 34px;
 }
@@ -194,6 +198,7 @@
 .product__presentation-text ul li {
     list-style: none;
     margin-bottom: 16px;
+    font-size: 1.16rem;
 }
 
 .product__presentation-text ul li::before {
@@ -340,34 +345,4 @@
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: #353535;
-}
-
-.ajax-cart__wrapper {
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 900;
-    background: rgba(0, 0, 0, 0.3);
-    display: none;
-}
-
-.ajax-cart__wrapper_open {
-    display: initial;
-}
-
-.ajax-cart__content {
-    width: 420px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: -420px;
-    background-color: red;
-    transition: 0.3s;
-}
-
-.ajax-cart__content_open {
-    right: 0;
-    transition: 0.3s;
 }

@@ -1,0 +1,44 @@
+<div class="cart__wrapper">
+    <div class="cart__header">
+        <p class="cart_title">My Cart</p>
+        <img src="{{xIcon}}" alt="" onclick="toggleCart()" />
+    </div>
+    <div class="cart__items-list">
+        {{#each items}}
+        <div class="cart__item">
+            <figure class="item__image-block">
+                <img class="item__image" src="{{ image }}" alt="{{ title }}" />
+            </figure>
+            <div class="item__detail">
+                <a class="item__title" href="{{ url }}">{{ title }}</a>
+                <p class="item__variant">{{ variant_title }}</p>
+                <p class="item__price">{{ price }}</p>
+                <div class="item__change-quantity">
+                    <span class="item__minus-icon"
+                        onclick="changeCartProductQuantity('{{variant_id}}', {{quantity }} - 1)">
+                        <img src="{{../minusIcon}}" alt="" />
+                    </span>
+                    <span class="item__quantity">{{ quantity }}</span>
+                    <span class="item__plus-icon"
+                        onclick="changeCartProductQuantity('{{variant_id}}', {{quantity}} + 1)">
+                        <img src="{{../plusIcon}}" alt="" />
+                    </span>
+                    <input type="number" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}"
+                        min="0" hidden>
+                </div>
+                <span class="item__remove">
+                    <img src="{{../removeIcon}}" alt="" onclick="changeCartProductQuantity('{{variant_id}}', 0)" />
+                </span>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <form action="/cart" method="post" novalidate class="form">
+        <div class="form__sub-total">
+            <span>Sub total</span>
+            <span>{{sub_total}}</span>
+        </div>
+        <p class="form__shipping-info">Tax and shipping calculates at checkout.</p>
+        <button class="form__button" type="submit" name="checkout">Continue to Checkout</button>
+    </form>
+</div>

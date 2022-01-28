@@ -1,0 +1,89 @@
+let template = null;
+const target = document.querySelector(".ajax-cart__content");
+const additionalCartData = {
+    xIcon: "{{ 'icon-x.svg' | asset_url }}",
+    plusIcon: "{{ 'icon-plus.svg' | asset_url }}",
+    minusIcon: "{{ 'icon-minus.svg' | asset_url }}",
+    removeIcon: "{{ 'icon-remove.svg' | asset_url }}",
+}
+
+async function cartInit() {
+    const cartTemplate = await fetch("{{ 'template.cart.hbs' | asset_url }}");
+    const cartTemplateHTML = await cartTemplate.text();
+    template = Handlebars.compile(cartTemplateHTML);
+}
+
+function toggleCart() {
+    const cartWrapper = document.querySelector(".ajax-cart__wrapper");
+    const cartContent = document.querySelector(".ajax-cart__content");
+
+    cartContent.classList.toggle("ajax-cart__content_open");
+    cartWrapper.classList.toggle("ajax-cart__wrapper_open");
+}
+
+async function addToCart(variantId, qty) {
+    const response = await fetch("/cart/add.js", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            id: variantId,
+            quantity: qty,
+        }),
+    });
+    if (!response.ok) throw new Error("Something went wrong");
+    const responseJSON = await response.json();
+
+    return responseJSON;
+}
+
+async function getCartData() {
+    const response = await fetch("/cart.js", {
+        headers: {
+            "Content-Type": "application/json",
+        },
+    });
+    if (!response.ok) throw new Error("Something went wrong");
+    const responseJSON = await response.json();
+
+    return responseJSON;
+}
+
+async function changeCartProductQuantity(id, quantity) {
+    const response = await fetch("/cart/change.js", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            id,
+            quantity,
+        }),
+    });
+    if (!response.ok) throw new Error("Something went wrong");
+    const responseJSON = await response.json();
+
+    updateCart(responseJSON);
+}
+
+async function addProductToCart() {
+    const select = document.querySelector("#main-product-selector");
+    await addToCart(select.value, 1);
+
+    const products = await getCartData();
+    updateCart(products)
+    toggleCart();
+};
+
+async function updateCart(cartData) {
+    target.innerHTML = template({
+        items: cartData.items.map(item => {
+            item.price = currencyFormater(item.price); return item
+        }),
+        ...additionalCartData,
+        sub_total: currencyFormater(cartData.total_price)
+    });
+}
+
+cartInit()

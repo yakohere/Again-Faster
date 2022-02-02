@@ -1,39 +1,55 @@
 <!-- /templates/customers/addresses.liquid -->
 
-<h2>New Address</h2>
-{% form 'customer_address', customer.new_address %}
+<div class="addresses__wrapper">
+    <h1 class="address__heading">Addresses</h1>
+    <a href="/customer/account" class="address__return-account">Return to account details</a>
+    <a href="#" class="address__new-address">Add a new address</a>
 
-{{ form.errors | default_errors }}
+    <h1 class="address__default-heading">Default</h1>
+    {%- for address in customer.addresses -%}
+    <div class="address__default-list">
+        {{ address | format_address }}
+    </div>
+    {%- endfor -%}
+    <a class="address__edit" href="#">Edit</a>
+    <a class="address__delete" href="#">Delete</a>
 
-<label for="first_name">First Name</label>
-<input type="text" value="" name="address[first_name]" size="30" />
+    <div class="form__wrapper">
+        {% form 'customer_address', customer.new_address %}
 
-<label for="last_name">Last Name</label>
-<input type="text" value="" name="address[last_name]" size="30" />
+        {{ form.errors | default_errors }}
 
-<label for="company">Company</label>
-<input type="text" value="" name="address[company]" />
+        <label for="first_name">First Name</label>
+        <input type="text" value="" name="address[first_name]" size="30" />
 
-<label for="address1">Address 1</label>
-<input type="text" value="" name="address[address1]" />
+        <label for="last_name">Last Name</label>
+        <input type="text" value="" name="address[last_name]" size="30" />
 
-<label for="address2">Address 2</label>
-<input type="text" value="" name="address[address2]" />
+        <label for="company">Company</label>
+        <input type="text" value="" name="address[company]" />
 
-<label for="city">City</label>
-<input type="text" value="" name="address[city]" />
+        <label for="address1">Address 1</label>
+        <input type="text" value="" name="address[address1]" />
 
-<!-- See docs for @shopify/theme-addresses to support Country and Province -->
-<label for="country">Country</label>
-<select name="address[country]" /></select>
+        <label for="address2">Address 2</label>
+        <input type="text" value="" name="address[address2]" />
 
-<label for="province">Province</label>
-<select name="address[province]" /></select>
+        <label for="city">City</label>
+        <input type="text" value="" name="address[city]" />
 
-<label for="zip">Zip/Post Code</label>
-<input type="text" value="" name="address[zip]" />
+        <label for="country">Country</label>
+        <select name="address[country]" /></select>
 
-<label for="phone">Phone Number</label>
-<input type="tel" value="" name="address[phone]" />
+        <label for="province">Province</label>
+        <select name="address[province]" /></select>
 
-{% endform %}
+        <label for="zip">Zip/Post Code</label>
+        <input type="text" value="" name="address[zip]" />
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" value="" name="address[phone]" />
+
+        <button>Add Adress</button>
+        {% endform %}
+    </div>
+</div>

@@ -1,0 +1,78 @@
+.addresses__wrapper {
+    margin-top: 52px;
+    padding: 40px;
+    text-align: center;
+}
+
+.address__return-account {
+    display: block;
+    color: #797979;
+}
+
+.address__default-list p {
+    margin: 8px;
+    line-height: 1.5;
+}
+
+.address__heading {
+    font-size: 28px;
+    font-weight: 600;
+    padding: 30px;
+}
+  
+.address .address-text {
+    text-decoration: underline;
+    color: #868484;
+    padding: 20px;
+}
+  
+.address__new-address {
+    display: inline-block;
+    text-decoration: none;
+    color: #c2bfbf;
+    padding: 10px 20px;
+    margin: 10px 0px 30px 0px;
+    border: 1px solid #a1a0a0;
+    background-color: #222;
+}
+  
+.address__default-description {
+    width: 250px;
+    margin: auto;
+    padding: 25px;
+}
+  
+.address__edit,
+.address__delete {
+    display: inline-block;
+    text-decoration: none;
+    color: #c2bfbf;
+    border: 1px solid #a1a0a0;
+    padding: 10px 30px;
+    margin: 0px 10px 50px 0px;
+  }
+
+.form__wrapper label {
+    display: block;
+    text-align: left;
+}
+
+.form__wrapper input {
+    display: block;
+    margin-bottom: 16px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.form__wrapper select {
+    display: block;
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.form__wrapper button {
+    display: block;
+    text-align: left;
+    padding: 10px;
+    border: 1px solid black;
+}

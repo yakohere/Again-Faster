@@ -3,14 +3,15 @@
 
 <div class="register__wrapper">
     <h1 class="register__title">Create an account</h1>
-    
+    <div class="register__errors">
         {{ form.errors | default_errors }}
-        <input value="{{ form.first_name }}" placeholder="First Name" type="text" name="customer[first_name]" size="30" />
-        <input value="{{ form.last_name }}" placeholder="Last Name" type="text" name="customer[last_name]" size="30" />
-        <input value="{{ form.email }}" placeholder="Email" type="email" name="customer[email]" size="30" />
-        <input placeholder="Password" type="password" name="customer[password]" size="30" />
-
-        <input type="submit" value="Create" />
-
     </div>
+    <input value="{{ form.first_name }}" placeholder="First Name" type="text" name="customer[first_name]" size="30" />
+    <input value="{{ form.last_name }}" placeholder="Last Name" type="text" name="customer[last_name]" size="30" />
+    <input value="{{ form.email }}" placeholder="Email" type="email" name="customer[email]" size="30" />
+    <input placeholder="Password" type="password" name="customer[password]" size="30" />
+
+    <input type="submit" value="Create" />
+
+</div>
 {% endform %}

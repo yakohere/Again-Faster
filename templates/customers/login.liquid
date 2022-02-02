@@ -4,7 +4,9 @@
     <h2 class="login__title">Login</h2>
     {% form 'customer_login' %}
 
-    {{ form.errors | default_errors }}
+    <div class="login__errors">
+        {{ form.errors | default_errors }}
+    </div>
 
     <input placeholder="Email Address" type="email" name="customer[email]" />
     <input placeholder="Password" type="password" name="customer[password]" />
@@ -13,15 +15,17 @@
 
     {% endform %}
 
-    <!-- <h2>Forgot Password</h2>
+    <h2 class="login__title">Forgot Password</h2>
+    <div class="login__errors">
+        {% form 'recover_customer_password' %}
+    </div>
 
-    {% form 'recover_customer_password' %}
 
     {{ form.errors | default_errors }}
 
-    <input type="email" name="email" />
+    <input type="email" placeholder="Email Address" name="email" />
 
-    <input type="submit" value="Submit" /> -->
+    <input type="submit" value="Submit" />
 
     {% endform %}
 </div>

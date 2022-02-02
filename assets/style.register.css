@@ -1,0 +1,22 @@
+.register__wrapper {
+    margin-top: 52px;
+    padding: 50px;
+}
+
+.register__title {
+    text-align: center;
+    margin: 36px 0;
+}
+
+.register__wrapper input {
+    padding: 10px;
+    border: 1px solid black;
+    display: block;
+    margin: 12px auto
+}
+
+.register__wrapper button {
+    display: block;
+    padding: 16px 32px;
+    margin: 12px auto;
+}

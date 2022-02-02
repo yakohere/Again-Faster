@@ -1,0 +1,16 @@
+.login__wrapper {
+    margin-top: 52px;
+    padding: 50px;
+}
+
+.login__title {
+    text-align: center;
+    margin: 36px 0;
+}
+
+.login__wrapper input {
+    padding: 10px;
+    border: 1px solid black;
+    display: block;
+    margin: 12px auto
+}

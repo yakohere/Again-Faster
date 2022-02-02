@@ -1,4 +1,48 @@
-<!-- /templates/customers/account.liquid -->
+<div class="account__wrapper">
+    <h1 class="account__title">Account</h1>
+    <a href="#" class="account__log-out">Log out</a>
+
+    <div class="account__order-wrapper">
+        <div class="order__history">
+            <h1 class="order__title">Order history</h1>
+
+            <table class="order__table">
+                <tr class="order__table-row">
+                    <th>ORDER</th>
+                    <th>date</th>
+                    <th>payment status</th>
+                    <th>fulfillmed status</th>
+                    <th>total</th>
+                </tr>
+                <tr class="order__table-row">
+                    <td>#1001</td>
+                    <td>June 23, 2021</td>
+                    <td>Paid</td>
+                    <td>Unfulfilled</td>
+                    <td>215.00 CAD</td>
+                </tr>
+            </table>
+        </div>
+
+    <div class="account__details">
+      <h1 class="account__details-title">Account details</h1>
+      <p class="account__details-description">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem,
+        adipisci?
+      </p>
+      <p class="account__details-view-add">View addresses (1)</p>
+    </div>
+  </div>
+
+  <!-- <div class="sign-up">
+    <h1>Sign up to our emails</h1>
+
+    <div class="sign-up-btns">
+      <input type="text" placeholder="Your email" />
+      <button>Subscribe</button>
+    </div>
+  </div> -->
+</div>
 
 {% if customer.default_address %}
   <h2>Address</h2>

@@ -1,28 +1,27 @@
 <!-- /templates/customers/login.liquid -->
 
-<h2>Login</h2>
-{% form 'customer_login' %}
+<div class="login__wrapper">
+    <h2 class="login__title">Login</h2>
+    {% form 'customer_login' %}
 
-{{ form.errors | default_errors }}
+    {{ form.errors | default_errors }}
 
-<label for="customer_email">Email Address</label>
-<input type="email" name="customer[email]" />
+    <input placeholder="Email Address" type="email" name="customer[email]" />
+    <input placeholder="Password" type="password" name="customer[password]" />
 
-<label for="customer_password">Password</label>
-<input type="password" name="customer[password]" />
+    <input type="submit" value="Sign In" />
 
-<input type="submit" value="Sign In" />
+    {% endform %}
 
-{% endform %}
+    <!-- <h2>Forgot Password</h2>
 
-<h2>Forgot Password</h2>
-{% form 'recover_customer_password' %}
+    {% form 'recover_customer_password' %}
 
-{{ form.errors | default_errors }}
+    {{ form.errors | default_errors }}
 
-<label for="customer_email">Email Address</label>
-<input type="email" name="email" />
+    <input type="email" name="email" />
 
-<input type="submit" value="Submit" />
+    <input type="submit" value="Submit" /> -->
 
-{% endform %}
+    {% endform %}
+</div>

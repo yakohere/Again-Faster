@@ -27,6 +27,9 @@
     <link rel="preload" as="style" href="{{ 'style.template-collection-list.css' | asset_url }}">
     <link rel="preload" as="style" href="{{ 'style.header.css' | asset_url }}">
     <link rel="preload" as="style" href="{{ 'style.footer.css' | asset_url }}">
+    <link rel="preload" as="style" href="{{ 'style.register.css' | asset_url }}">
+    <link rel="preload" as="style" href="{{ 'style.login.css' | asset_url }}">
+    <link rel="preload" as="style" href="{{ 'style.account.css' | asset_url }}">
 
     {{ 'style.global.css' | asset_url | stylesheet_tag }}
     {{ 'style.announcement-bar.css' | asset_url | stylesheet_tag }}
@@ -40,6 +43,9 @@
     {{ 'style.template-collection-list.css' | asset_url | stylesheet_tag }}
     {{ 'style.header.css' | asset_url | stylesheet_tag }}
     {{ 'style.footer.css' | asset_url | stylesheet_tag }}
+    {{ 'style.register.css' | asset_url | stylesheet_tag }}
+    {{ 'style.login.css' | asset_url | stylesheet_tag }}
+    {{ 'style.account.css' | asset_url | stylesheet_tag }}
 
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js" defer></script>
     <script src="{{ 'script.functions.js' | asset_url }}" type="text/javascript" defer></script>
@@ -52,7 +58,7 @@
 <body class="template-{{ template | handleize }}">
     {% section 'announcement-bar' %}
     {% section 'header' %}
-
+<!-- 
     {% if shop.customer_accounts_enabled %}
     {% if customer %}
     <a href="/account">account</a>
@@ -61,7 +67,7 @@
     {{ 'log in ' | customer_login_link }}
     {{ 'register' | customer_register_link }}
     {% endif %}
-    {% endif %}
+    {% endif %} -->
 
     <main role="main">
         {{ content_for_layout }}

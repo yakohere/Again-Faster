@@ -12,6 +12,17 @@
     },
     "featured-collections": {
       "type": "featured-collections",
+      "blocks": {
+        "7a680eba-322e-4bab-8b8e-21cad98f2d36": {
+          "type": "collection",
+          "settings": {
+            "collection": "collection-a"
+          }
+        }
+      },
+      "block_order": [
+        "7a680eba-322e-4bab-8b8e-21cad98f2d36"
+      ],
       "settings": {
       }
     },

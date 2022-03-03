@@ -17,6 +17,7 @@
     },
     "best-seller": {
       "type": "best-seller",
+      "disabled": true,
       "settings": {
         "title": "Best Seller",
         "sub_title": "TRULY, AN ALL IN ONE BARBELL",

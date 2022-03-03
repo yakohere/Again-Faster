@@ -1,7 +1,8 @@
 {{ "cart.css" | asset_url |  stylesheet_tag }}
 
 {% if cart.item_count > 0 %}
-	<div class="cart__wrapper">
+<div class="cart__wrapper">
+	<div class="cart">
 		<div class="cart__header">
 			<p class="cart_title">My Cart</p>
 			<span>{% render "icon-x" %}</span>

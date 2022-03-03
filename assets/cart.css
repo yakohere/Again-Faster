@@ -1,0 +1,23 @@
+.cart__wrapper {
+  padding: 50px;
+  width: 100%;
+}
+
+.cart {
+	width: 500px;
+  	margin: auto;
+}
+
+.cart__items-list {
+	height: 100% !important;
+	overflow: hidden;
+	
+}
+
+form {
+	width: 100%;
+  	background: white;
+  	position: static !important;
+  	padding: 0 !important;
+  	margin-top: 10px;
+}

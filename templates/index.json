@@ -1,18 +1,34 @@
 {
-    "sections": {
-        "image-banner": {
-            "type": "image-banner"
-        },
-        "featured-collections": {
-            "type": "featured-collections"
-        },
-        "best-seller": {
-            "type": "best-seller"
-        }
+  "sections": {
+    "image-banner": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/AF_Hero-full.jpg",
+        "heading": "Team barbell",
+        "paragraph": "Team Barbell was to design a piece of equipment that matches the performance and quality of other elite level competition bars.",
+        "button": "Explore",
+        "button_link": ""
+      }
     },
-    "order": [
-        "image-banner",
-        "featured-collections",
-        "best-seller"
-    ]
+    "featured-collections": {
+      "type": "featured-collections",
+      "settings": {
+      }
+    },
+    "best-seller": {
+      "type": "best-seller",
+      "settings": {
+        "title": "Best Seller",
+        "sub_title": "TRULY, AN ALL IN ONE BARBELL",
+        "paragraph": "Design that matches the performance and quality of other elite level competition bars",
+        "button": "SHOP WEIGHTS",
+        "button_link": ""
+      }
+    }
+  },
+  "order": [
+    "image-banner",
+    "featured-collections",
+    "best-seller"
+  ]
 }

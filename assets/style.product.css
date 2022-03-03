@@ -123,6 +123,10 @@
     width: 100%;
 }
 
+.product__form-submit-button.disabled {
+	background: grey;
+}
+
 /* Frequently Bought Products Styles */
 
 .freq-bought-products {

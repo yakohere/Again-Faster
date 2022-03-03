@@ -125,6 +125,7 @@
 
 .product__form-submit-button.disabled {
 	background: grey;
+  	cursor: not-allowed;
 }
 
 /* Frequently Bought Products Styles */

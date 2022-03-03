@@ -54,8 +54,8 @@
                 {% endif %}
                 {% endfor %}
             </select>
-            <button class="product__form-submit-button {% if product.available==false %}
-                        disabled {% endif %}" onclick="addProductToCart()" type="button" name="add"
+            <button class="product__form-submit-button {% unless product.available %}
+                        disabled {% endunless %}" onclick="addProductToCart()" type="button" name="add"
                 id="AddToCart">Add to cart</button>
         </form>
 

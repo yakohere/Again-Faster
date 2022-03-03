@@ -18,10 +18,17 @@
           "settings": {
             "collection": "collection-a"
           }
+        },
+        "f72ab547-cbe9-4d32-8089-0dd19f2c285e": {
+          "type": "collection",
+          "settings": {
+            "collection": "collection-b"
+          }
         }
       },
       "block_order": [
-        "7a680eba-322e-4bab-8b8e-21cad98f2d36"
+        "7a680eba-322e-4bab-8b8e-21cad98f2d36",
+        "f72ab547-cbe9-4d32-8089-0dd19f2c285e"
       ],
       "settings": {
       }

@@ -47,6 +47,12 @@
 {% if customer.default_address %}
   <h2>Address</h2>
   <p>{{ customer.default_address.address1 }}</p>
+<!-- Begin ReCharge code -->
+<p id="rc_link_container">
+    <a href="/tools/recurring/login">Manage Subscriptions</a>
+</p>
+<!-- End ReCharge code -->
+
   {% if customer.default_address.address2 != "" %}
     <p>{{ customer.default_address.address2 }}</p>
   {% endif %}

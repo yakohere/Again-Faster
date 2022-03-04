@@ -21,7 +21,7 @@
         </div>
         <p class="product__description">{{ product.description }}</p>
 
-        <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" class="product__form">
+        <form action="/cart/add" data-productid="{{ product.id }}" method="post" enctype="multipart/form-data" id="AddToCartForm" class="product__form">
             <ul class="product__variants-list">
                 {% for variant in product.variants %}
                 <li class="product__variants-list-item">
@@ -41,7 +41,7 @@
             <p class="product__free-shipping-available">Available for Free shipping!</p>
             {% endif %}
 
-            <select name="id" id="main-product-selector" class="product__master-selector">
+            <select name="id" data-productid="{{ product.id }}" id="main-product-selector" class="product__master-selector">
                 {% for variant in product.variants %}
                 {% if variant.available %}
                 <option value="{{ variant.id }}">

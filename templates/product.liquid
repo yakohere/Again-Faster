@@ -14,7 +14,7 @@
     <div class="product__detail">
         <h1 class="product__title">{{ product.title }}</h1>
 <!--         <p class="product__price">{{ current_variant.price | money }}</p> -->
-		      <p class="product__price">{% if variant.price < variant.compare_at_price %} {{ variant.compare_at_price | money }}{% endif %}</p>
+		      <p class="product__price">{% if product.price < product.compare_at_price %} {{ product.compare_at_price | money }}{% endif %}</p>
         <div class="product__stars">
             {% for star in (1..product.metafields.accentuate.stars) %}
             {% render "icon-star" %}

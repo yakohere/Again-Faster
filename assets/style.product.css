@@ -40,8 +40,8 @@
 }
 
 .product__price--real {
-	text-decoration: line-through;
-  	color: black;
+	text-transform: line-through;
+  	color: grey;
 }
 
 .product__description {

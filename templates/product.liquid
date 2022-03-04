@@ -22,7 +22,8 @@
         <p class="product__description">{{ product.description }}</p>
 
         <form action="/cart/add" data-productid="{{ product.id }}" method="post" enctype="multipart/form-data" id="AddToCartForm" class="product__form">
-            <ul class="product__variants-list">
+            
+			<!--<ul class="product__variants-list">
                 {% for variant in product.variants %}
                 <li class="product__variants-list-item">
                     <input type="radio" name="product-{{product.id}}-variant" onclick="onVariantChange(this)"
@@ -35,7 +36,7 @@
                     </label>
                 </li>
                 {% endfor %}
-            </ul>
+            </ul> -->
 
             {% if product.metafields.accentuate.free_shipping %}
             <p class="product__free-shipping-available">Available for Free shipping!</p>

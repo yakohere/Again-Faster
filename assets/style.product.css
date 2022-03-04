@@ -39,6 +39,11 @@
     margin: 8px 0 13px 0;
 }
 
+.product__price--real {
+	text-decoration: line-through;
+  	color: black;
+}
+
 .product__description {
     margin: 14px 0 16px 0;
     font-size: 1.15rem;
